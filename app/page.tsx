@@ -153,7 +153,7 @@ export default function Home() {
                   <div>
                     <h4 className="text-xl font-semibold mb-3">Challenge & Solution</h4>
                     <p className="text-gray-600">
-                    A mobile application empowering Lifebuoy Moms with advanced health monitoring and predictive tools to safeguard their family's wellbeing.
+                    A mobile application empowering Lifebuoy Moms with advanced health monitoring and predictive tools to safeguard their family&apos;s wellbeing.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -207,7 +207,7 @@ export default function Home() {
                   <div>
                     <h4 className="text-xl font-semibold mb-3">Challenge & Solution</h4>
                     <p className="text-gray-600">
-                    Your trusted digital companion for Indonesian parents to track, understand, and nurture their children's growth journey from day one. 
+                    Your trusted digital companion for Indonesian parents to track, understand, and nurture their children&apos;s growth journey from day one. 
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -269,7 +269,7 @@ export default function Home() {
       {/* Contact Section */}
       <div className="bg-gradient-to-br from-red-600 to-red-800 text-white py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Let's Build Together</h2>
+          <h2 className="text-3xl font-bold mb-6">Let&apos;s Build Together</h2>
           <p className="text-xl mb-8">Partner with us to transform your business</p>
         </div>
       </div>
