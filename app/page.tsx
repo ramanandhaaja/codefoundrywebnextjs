@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { BuildingIcon, Code2Icon, Smartphone, Server, Users, Clock, Shield, Star } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,10 +10,12 @@ export default function Home() {
       <div className="relative h-screen">
         {/* Background Image */}
         <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src="hero.jpg"
+          <Image 
+            src="/hero.jpg"
             alt="Hero background" 
-            className="w-full h-full object-cover"
+            className="object-cover"
+            fill
+            priority
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-red-500/90 to-red-700/90"></div>
@@ -134,10 +137,11 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="max-w-2xl">
               <div className="w-full h-48 relative">
-                <img 
+                <Image 
                   src="/lifebuoy-header.png"
                   alt="Lifebuoy"
-                  className="w-full h-full object-cover rounded-t-lg"
+                  className="object-cover rounded-t-lg"
+                  fill
                 />
               </div>
               <CardContent className="p-8">
@@ -149,7 +153,7 @@ export default function Home() {
                   <div>
                     <h4 className="text-xl font-semibold mb-3">Challenge & Solution</h4>
                     <p className="text-gray-600">
-                      Modern financial management system that transformed digital operations.
+                    A mobile application empowering Lifebuoy Moms with advanced health monitoring and predictive tools to safeguard their family's wellbeing.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -170,13 +174,13 @@ export default function Home() {
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <BuildingIcon className="h-8 w-8 text-red-600 mr-3" />
-                  <h3 className="text-2xl font-bold">Telkom Indonesia</h3>
+                  <h3 className="text-2xl font-bold">Dolarindo</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-xl font-semibold mb-3">Challenge & Solution</h4>
                     <p className="text-gray-600">
-                      Enterprise resource planning system for improved operational efficiency.
+                    Money Changer Operation System.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -203,7 +207,7 @@ export default function Home() {
                   <div>
                     <h4 className="text-xl font-semibold mb-3">Challenge & Solution</h4>
                     <p className="text-gray-600">
-                      Supply chain management system with real-time tracking capabilities.
+                    Your trusted digital companion for Indonesian parents to track, understand, and nurture their children's growth journey from day one. 
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -224,13 +228,13 @@ export default function Home() {
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
                   <BuildingIcon className="h-8 w-8 text-red-600 mr-3" />
-                  <h3 className="text-2xl font-bold">Royal Medica</h3>
+                  <h3 className="text-2xl font-bold">Royal Medica Pharmalab</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="text-xl font-semibold mb-3">Challenge & Solution</h4>
                     <p className="text-gray-600">
-                      Digital banking platform with enhanced security features.
+                    Sales Management and Performance Monitoring System.
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-2">
@@ -248,11 +252,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center ">Trusted By Leading Companies</h2>
           <div className="w-full overflow-hidden">
-            <div className="flex justify-center items-center gap-12 py-8">
-              <img
+            <div className="flex justify-center items-center gap-12 py-12 relative h-96 max-w-7xl mx-auto">
+              <Image
                 src="/client.png"
                 alt="Client Companies"
-                className="max-w-10xl w-full h-auto"
+                className="object-contain"
+                fill
+                sizes="(max-width: 1920px) 100vw"
+                priority
               />
             </div>
           </div>
