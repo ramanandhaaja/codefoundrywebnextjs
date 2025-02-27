@@ -182,7 +182,7 @@ export default function Home() {
                       <option value="consulting" className="text-gray-800">IT Consulting</option>
                     </select>
                   </div>
-                  <Button className="w-full bg-white hover:bg-gray-100 text-red-600 py-3 font-medium">
+                  <Button className="w-full bg-white hover:bg-gray-100 text-red-600 px-8 py-6 rounded-lg font-medium text-lg">
                     Request a Callback
                   </Button>
                   <p className="text-white/60 text-xs text-center">
@@ -236,12 +236,12 @@ export default function Home() {
               {/* Image container with higher z-index */}
               <div className="aspect-video relative rounded-lg overflow-hidden shadow-xl z-10">
                 <Image 
-                  src="/purpose.jpg" 
+                  src="/bulb.jpg" 
                   alt="Digital transformation" 
                   className="object-cover"
                   fill
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-red-600/40 to-transparent"></div>
+                
               </div>
             </div>
           </div>
@@ -435,7 +435,8 @@ export default function Home() {
             </div>
             
             <div className="text-center mt-16">
-              <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-3">
+            <Button className="bg-red-600 hover:bg-red-700 text-white px-8 py-6 rounded-lg text-lg font-medium">
+            
                 Learn More About Our Process
               </Button>
             </div>
@@ -713,7 +714,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-white rounded-lg shadow-md flex items-center justify-center p-3 mb-2">
                     <Image 
-                      src="/tech/react.svg" 
+                      src="/react.svg" 
                       alt="React" 
                       className="w-full h-full object-contain" 
                       width={64}
@@ -724,20 +725,32 @@ export default function Home() {
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-white rounded-lg shadow-md flex items-center justify-center p-3 mb-2">
-                    <Image 
-                      src="/tech/next.svg" 
-                      alt="Next.js" 
-                      className="w-full h-full object-contain" 
-                      width={64}
-                      height={64}
-                    />
-                  </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="64" height="64">
+                      <mask height="180" id=":r8:mask0_408_134" maskUnits="userSpaceOnUse" width="180" x="0" y="0" style={{maskType: 'alpha'}}>
+                        <circle cx="90" cy="90" fill="black" r="90"></circle>
+                      </mask>
+                      <g mask="url(#:r8:mask0_408_134)">
+                        <circle cx="90" cy="90" data-circle="true" fill="black" r="90"></circle>
+                        <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="url(#:r8:paint0_linear_408_134)"></path>
+                        <rect fill="url(#:r8:paint1_linear_408_134)" height="72" width="12" x="115" y="54"></rect>
+                      </g>
+                      <defs>
+                        <linearGradient gradientUnits="userSpaceOnUse" id=":r8:paint0_linear_408_134" x1="109" x2="144.5" y1="116.5" y2="160.5">
+                          <stop stopColor="white"></stop>
+                          <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                        </linearGradient>
+                        <linearGradient gradientUnits="userSpaceOnUse" id=":r8:paint1_linear_408_134" x1="121" x2="120.799" y1="54" y2="106.875">
+                          <stop stopColor="white"></stop>
+                          <stop offset="1" stopColor="white" stopOpacity="0"></stop>
+                        </linearGradient>
+                      </defs>
+                    </svg></div>
                   <span className="text-sm text-gray-600">Next.js</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-white rounded-lg shadow-md flex items-center justify-center p-3 mb-2">
                     <Image 
-                      src="/tech/vue.svg" 
+                      src="/vue.svg" 
                       alt="Vue.js" 
                       className="w-full h-full object-contain" 
                       width={64}
@@ -749,7 +762,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-white rounded-lg shadow-md flex items-center justify-center p-3 mb-2">
                     <Image 
-                      src="/tech/tailwind.svg" 
+                      src="/tailwind.png" 
                       alt="Tailwind CSS" 
                       className="w-full h-full object-contain" 
                       width={64}
@@ -761,7 +774,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-white rounded-lg shadow-md flex items-center justify-center p-3 mb-2">
                     <Image 
-                      src="/tech/typescript.svg" 
+                      src="/typescript.svg" 
                       alt="TypeScript" 
                       className="w-full h-full object-contain" 
                       width={64}
@@ -773,7 +786,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="w-16 h-16 bg-white rounded-lg shadow-md flex items-center justify-center p-3 mb-2">
                     <Image 
-                      src="/tech/flutter.svg" 
+                      src="/flutter.svg" 
                       alt="Flutter" 
                       className="w-full h-full object-contain" 
                       width={64}
@@ -962,7 +975,8 @@ export default function Home() {
             <p className="text-gray-600 mb-8">
               Our technology stack is constantly evolving to meet the changing needs of our clients and the industry.
             </p>
-            <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50">
+            
+            <Button variant="outline" className="border-red-600 text-red-600 hover:bg-red-50 px-8 py-6 rounded-lg text-lg font-medium">
               Learn More About Our Technical Expertise
             </Button>
           </div>
@@ -984,25 +998,40 @@ export default function Home() {
               
               <div className="space-y-6 mb-10">
                 <div className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="text-gray-400">Jakarta, Indonesia</span>
+                  <div className="bg-white/10 p-3 rounded-full mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Visit Us</h3>
+                    <p className="text-white/80">Jakarta, Indonesia</p>
+                  </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <span className="text-gray-400">+62 21 1234 5678</span>
+                  <div className="bg-white/10 p-3 rounded-full mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Call Us</h3>
+                    <p className="text-white/80">+62 21 1234 5678</p>
+                  </div>
                 </div>
                 
                 <div className="flex items-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-gray-400">info@codefoundry.id</span>
+                  <div className="bg-white/10 p-3 rounded-full mr-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-lg">Email Us</h3>
+                    <p className="text-white/80">info@codefoundry.id</p>
+                  </div>
                 </div>
               </div>
               
@@ -1020,7 +1049,7 @@ export default function Home() {
                       <div className="flex">
                         {[1, 2, 3, 4, 5].map((star) => (
                           <svg key={star} className="w-4 h-4 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            <path fillRule="evenodd" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
                       </div>
@@ -1115,7 +1144,7 @@ export default function Home() {
                   ></textarea>
                 </div>
                 
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-white py-4 font-medium text-lg">
+                <Button className="w-full bg-red-600 hover:bg-red-700 text-white px-8 py-6 rounded-lg font-medium text-lg">
                   Send Message
                 </Button>
                 <p className="text-xs text-gray-500 text-center mt-2">
@@ -1161,7 +1190,7 @@ export default function Home() {
                 </a>
                 <a href="#" className="bg-gray-800 hover:bg-red-600 w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fillRule="evenodd" d="M5 12a1 1 0 102 0V6.414l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L5 6.414V12zM15 8a1 1 0 10-2 0v5.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L15 13.586V8z" />
+                    <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
                   </svg>
                 </a>
               </div>
