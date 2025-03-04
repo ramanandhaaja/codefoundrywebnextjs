@@ -2,8 +2,72 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useState, FormEvent } from "react";
 
 export default function HeroSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState<{
+    message: string;
+    type: 'success' | 'error' | '';
+  }>({ message: '', type: '' });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.service) {
+      setFormStatus({
+        message: 'Please fill in all fields',
+        type: 'error'
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      setFormStatus({ message: '', type: '' });
+      
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to send message');
+      }
+
+      // Clear form on success
+      setFormData({ name: '', email: '', service: '' });
+      setFormStatus({
+        message: 'Thank you! We will contact you shortly.',
+        type: 'success'
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setFormStatus({
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again.',
+        type: 'error'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="relative bg-white pb-32 md:pb-0">
       {/* Background Image with Parallax Effect */}
@@ -43,7 +107,13 @@ export default function HeroSection() {
               We design, build, and scale custom software that drives growth and solves complex business problems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center md:justify-start">
-              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 px-8 py-6 text-lg font-medium">
+              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 px-8 py-6 text-lg font-medium"
+              onClick={() => {
+                const successSection = document.getElementById('contact-section');
+                if (successSection) {
+                  successSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}>
                 Get a Free Consultation
               </Button>
               <Button 
@@ -74,10 +144,13 @@ export default function HeroSection() {
           <div className="w-full md:w-2/5 z-10 mt-8 md:mt-0">
             <div className="bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20 max-w-md mx-auto">
               <h3 className="text-white text-xl font-bold mb-4">Start Your Digital Transformation</h3>
-              <div className="space-y-4">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <input 
                     type="text" 
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
                     placeholder="Your Name" 
                     className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
@@ -85,12 +158,18 @@ export default function HeroSection() {
                 <div>
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="Your Email" 
                     className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50"
                   />
                 </div>
                 <div>
                   <select 
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white/10 border border-white/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 appearance-none"
                     style={{ backgroundImage: "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 20 20'%3e%3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e\")", 
                            backgroundPosition: "right 0.5rem center", 
@@ -99,19 +178,30 @@ export default function HeroSection() {
                            paddingRight: "2.5rem" }}
                   >
                     <option value="" className="text-gray-800">Select Service</option>
-                    <option value="web" className="text-gray-800">Web Development</option>
-                    <option value="mobile" className="text-gray-800">Mobile Development</option>
-                    <option value="custom" className="text-gray-800">Custom Software</option>
-                    <option value="consulting" className="text-gray-800">IT Consulting</option>
+                    <option value="Web Development" className="text-gray-800">Web Development</option>
+                    <option value="Mobile Development" className="text-gray-800">Mobile Development</option>
+                    <option value="Custom Software" className="text-gray-800">Custom Software</option>
+                    <option value="IT Consulting" className="text-gray-800">IT Consulting</option>
                   </select>
                 </div>
-                <Button className="w-full bg-white hover:bg-gray-100 text-red-600 px-8 py-6 rounded-lg font-medium text-lg">
-                  Request a Callback
+                <Button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className="w-full bg-white hover:bg-gray-100 text-red-600 px-8 py-6 rounded-lg font-medium text-lg"
+                >
+                  {isSubmitting ? 'Sending...' : 'Request a Callback'}
                 </Button>
+                
+                {formStatus.message && (
+                  <div className={`text-sm p-2 rounded ${formStatus.type === 'success' ? 'bg-green-500/20 text-white' : 'bg-red-500/20 text-white'}`}>
+                    {formStatus.message}
+                  </div>
+                )}
+                
                 <p className="text-white/60 text-xs text-center">
                   We&apos;ll get back to you within 24 hours
                 </p>
-              </div>
+              </form>
             </div>
           </div>
         </div>
