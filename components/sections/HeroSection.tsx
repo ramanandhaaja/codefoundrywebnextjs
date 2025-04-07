@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { useState, FormEvent } from "react";
 
 export default function HeroSection() {
@@ -131,9 +132,9 @@ export default function HeroSection() {
             <div className="mt-8 flex items-center gap-4 justify-center md:justify-start">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className={`w-10 h-10 rounded-full border-2 border-red-600 bg-gray-${i*100} flex items-center justify-center text-xs font-bold`}>
-                    {i === 4 ? '+' : ''}
-                  </div>
+                  <Avatar key={i} className="w-10 h-10 border-2 border-red-600">
+                    <AvatarImage src={`/avatar${i}.png`} alt={`User ${i}`} />
+                  </Avatar>
                 ))}
               </div>
               <p className="text-white/80 text-sm">Join our satisfied clients who&apos;ve transformed their businesses</p>
