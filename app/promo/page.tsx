@@ -116,7 +116,7 @@ export default function PromoPage() {
               </h2>
               <p className="text-base md:text-lg text-gray-600 mb-8">
                 Take a look at some of our recent website projects. Each design is
-                custom-built to meet our clients' unique business goals.
+                custom-built to meet our clients unique business goals.
               </p>
             </div>
 
@@ -303,7 +303,7 @@ export default function PromoPage() {
           <div className="max-w-7xl mx-auto text-center px-4">
             <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Don't miss out on this limited-time offer. Get your professional
+              Dont miss out on this limited-time offer. Get your professional
               website today!
             </p>
             <Link
